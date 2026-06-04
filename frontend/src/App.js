@@ -1,56 +1,50 @@
-import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import { Toaster } from "sonner";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import WhatsAppFab from "@/components/WhatsAppFab";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Products from "@/pages/Products";
+import Contact from "@/pages/Contact";
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <SmoothScrollProvider>
+                    <Navigation />
+                    <main>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/products" element={<Products />} />
+                            <Route path="/contact" element={<Contact />} />
+                        </Routes>
+                    </main>
+                    <Footer />
+                    <WhatsAppFab />
+                    <Toaster
+                        position="bottom-center"
+                        toastOptions={{
+                            style: {
+                                background: "#0A0A0A",
+                                color: "#FDFDFD",
+                                border: "1px solid #2A2A2A",
+                                borderRadius: 0,
+                                fontFamily:
+                                    "Outfit, system-ui, sans-serif",
+                                fontSize: "13px",
+                                letterSpacing: "0.05em",
+                            },
+                        }}
+                    />
+                </SmoothScrollProvider>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
