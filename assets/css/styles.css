@@ -577,3 +577,168 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
 }
 
 /* Active page link state added via JS */
+
+
+/* ============================================================
+   RESPONSIVE — tablet & mobile overrides
+   ============================================================ */
+
+/* Tablet (<= 1024px) */
+@media (max-width: 1023px) {
+  .section { padding: 80px 0; }
+  .section-tight { padding: 64px 0; }
+  .container-x { padding: 0 28px; }
+  .hero-inner { padding: 140px 28px 80px; }
+  .grid-12 { gap: 24px; }
+  .grid-2, .grid-3, .grid-4 { gap: 24px; }
+}
+
+/* Tablet stack (<= 880px) — nav switches to hamburger */
+@media (max-width: 879px) {
+  .nav-inner { padding: 16px 20px; }
+  .nav-title { font-size: 18px; }
+  .nav-sub { font-size: 9px; }
+  .nav-logo-mark { height: 32px; width: 32px; }
+  .nav-logo-mark img { height: 24px; width: 24px; }
+}
+
+/* Mobile (<= 767px) */
+@media (max-width: 767px) {
+  /* Spacing */
+  .section { padding: 64px 0; }
+  .section-tight { padding: 56px 0; }
+  .container-x { padding: 0 20px; }
+  .hero-inner { padding: 112px 20px 64px; }
+  .hero { min-height: auto; padding-top: 0; }
+  .hero, .hero-90 { min-height: 88vh; }
+
+  /* Headings — bring extremes down */
+  .h-display { font-size: clamp(2.5rem, 12vw, 4.5rem) !important; }
+  .h1 { font-size: clamp(2.25rem, 9vw, 3.5rem) !important; }
+  .h2 { font-size: clamp(1.875rem, 7vw, 2.75rem) !important; }
+  .h3 { font-size: clamp(1.5rem, 5vw, 2rem); }
+  .blockquote p { font-size: clamp(1.375rem, 6vw, 2rem) !important; }
+  .lead { font-size: 16px; line-height: 1.65; }
+
+  /* Grid — force all 12-col children to span 12 (CSS rule above already does this) */
+  .grid-12 { gap: 32px; }
+
+  /* 3-col bento → single column on mobile (stats are too tight at 3-col) */
+  .bento[style*="grid-template-columns:repeat(3"],
+  .bento[style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* 2-col bento → keep 2-col (spec cells look good at 2-col on mobile) */
+
+  /* Generic "Ideal for" 2-col lists -> single col */
+  ul[style*="grid-template-columns:1fr 1fr"],
+  ul[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stats / stat-cell paddings */
+  .stat-cell { padding: 32px 16px; }
+  .stat-cell .v { font-size: clamp(2rem, 8vw, 3rem); }
+
+  /* Spec cell padding */
+  .spec-cell { padding: 20px; }
+  .spec-cell .v { font-size: 18px; }
+
+  /* Grade row */
+  .grade-row { padding: 24px; gap: 16px; }
+  .grade-row .num { font-size: 22px; }
+  .grade-row .body p { font-size: 14px; }
+
+  /* Aspect ratio image cards — tighten on mobile */
+  .aspect-4-5 { aspect-ratio: 3 / 4; }
+  .aspect-4-5 .badge-row { top: 16px; left: 16px; right: 16px; flex-wrap: wrap; gap: 8px; }
+  .aspect-4-5 .badge-row > span:first-child { font-size: 20px !important; }
+
+  /* Buttons full-width-ish on mobile */
+  .btn { padding: 14px 22px; font-size: 10px; flex-wrap: nowrap; }
+  .cta-stack { width: 100%; }
+  .cta-stack .btn { width: 100%; justify-content: space-between; }
+  .flex-row.flex-wrap.gap-3 .btn { flex: 1 1 auto; min-width: 0; }
+
+  /* Marquee — smaller */
+  .marquee-track { gap: 32px; padding: 16px 0; font-size: 10px; }
+  .marquee-track > div { gap: 32px; }
+
+  /* Scroll cue hidden on small */
+  .scroll-cue { display: none !important; }
+
+  /* Drop cap — smaller */
+  .drop-cap::first-letter { font-size: 4rem; margin-right: 12px; }
+
+  /* Blockquote padding */
+  .blockquote { padding-left: 20px; border-left-width: 2px; }
+
+  /* Comparison table — already overflow-x:auto wrapper */
+  .tbl-compare { font-size: 13px; min-width: 600px; }
+  .tbl-compare th, .tbl-compare td { padding: 12px 16px; }
+  .tbl-compare thead th:not(:first-child) { font-size: 16px; }
+
+  /* Contact split */
+  .contact-left, .contact-right { min-height: auto; }
+  .contact-left .inner { padding: 56px 24px; gap: 32px; min-height: 460px; }
+  .contact-right .inner { padding: 56px 24px; }
+  .contact-channel .val { font-size: 1.25rem !important; }
+
+  /* Footer */
+  .footer-inner { padding: 72px 24px 40px; }
+  .footer h3 { font-size: 1.75rem !important; }
+  .footer-bottom { gap: 12px; margin-top: 48px; padding-top: 24px; font-size: 10px; }
+
+  /* Nav mobile sheet entries — slightly smaller */
+  .nav-mobile-sheet a { font-size: 26px; }
+  .nav-mobile-sheet .inner { padding: 24px 20px; gap: 18px; }
+
+  /* WhatsApp FAB smaller on mobile (already smaller — keep) */
+  .wa-fab { bottom: 16px; right: 16px; height: 52px; width: 52px; }
+  .wa-fab svg { height: 26px; width: 26px; }
+
+  /* Generic inline large gaps fix for grid split layouts */
+  [style*="gap:80px"],
+  [style*="gap: 80px"] { gap: 40px !important; }
+  [style*="gap:64px"],
+  [style*="gap: 64px"] { gap: 32px !important; }
+
+  /* Force About + Products hero to wrap nicely */
+  section[style*="padding-top:160px"] { padding-top: 120px !important; padding-bottom: 64px !important; }
+
+  /* Tabular wrap visual hint */
+  .tbl-wrap { margin-top: 32px; }
+}
+
+/* Extra-small (<= 480px) */
+@media (max-width: 480px) {
+  .container-x { padding: 0 16px; }
+  .hero-inner { padding: 96px 16px 56px; }
+  .h-display { font-size: clamp(2.25rem, 11vw, 3.5rem) !important; }
+  .h1 { font-size: clamp(2rem, 9vw, 3rem) !important; }
+  .h2 { font-size: clamp(1.75rem, 7vw, 2.5rem) !important; }
+
+  /* Inline spec grid — at <=480px collapse 2-col to 1-col for legibility */
+  div.bento[style*="grid-template-columns:repeat(2,1fr)"],
+  div.bento[style*="grid-template-columns: repeat(2,1fr)"],
+  div.bento[style*="grid-template-columns:repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero badge row sticks together */
+  .aspect-4-5 .badge-row > span:first-child { font-size: 18px !important; }
+  .aspect-4-5 .badge-row .badge-tag { font-size: 9px; padding: 4px 10px; }
+
+  /* Drop cap a bit smaller */
+  .drop-cap::first-letter { font-size: 3.25rem; }
+
+  /* Form fields — bigger touch targets */
+  .field-input, .field-textarea { font-size: 16px; padding: 14px 0; }
+
+  /* Marquee fade gentler */
+  .marquee-track { font-size: 9px; }
+}
+
+/* Prevent any horizontal scroll caused by transforms or oversized children */
+html, body { max-width: 100%; }
+img, svg, video { max-width: 100%; height: auto; }

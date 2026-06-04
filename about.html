@@ -151,7 +151,7 @@
       const grid = document.getElementById('about-stat-grid');
       if (!grid) return;
       const apply = () => {
-        grid.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(4,1fr)' : 'repeat(2,1fr)';
+        grid.style.gridTemplateColumns = window.innerWidth >= 1024 ? 'repeat(4,1fr)' : 'repeat(2,1fr)';
       };
       apply();
       window.addEventListener('resize', apply);

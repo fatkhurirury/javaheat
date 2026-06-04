@@ -46,7 +46,7 @@ No env vars. No build step. No backend.
 ├── products.html
 ├── contact.html
 ├── assets/
-│   ├── css/styles.css
+│   ├── css/styles.css   (+ comprehensive responsive overrides at the end)
 │   └── js/{main,contact}.js
 ├── pdfs/
 │   ├── javaheat-plus-value-spec-sheet.pdf
@@ -58,6 +58,22 @@ No env vars. No build step. No backend.
                               keeps serving the static files via supervisor.
                               NOT pushed to GitHub (covered by .gitignore? — see Backlog).
 ```
+
+## Responsive (added)
+- Mobile breakpoints: `<=1023` (tablet), `<=879` (nav-to-hamburger), `<=767` (mobile), `<=480` (extra-small)
+- Mobile nav: hamburger sheet, links collapse, CTA fills sheet
+- Hero font goes from 152px → 42.9px on 390px width
+- Section padding 160px → 64px on mobile
+- 3-col bento stats → single column on mobile (2-col spec cells stay 2-col for legibility)
+- About pillars `.grid-2` → 356px single column; stat grid 4×1 → 2×2 below 1024px
+- Products comparison table → horizontal scroll wrapper
+- Contact split layout collapses to vertical stack below 1024px
+- Buttons fill width inside `.cta-stack` on mobile
+- Marquee, drop-cap, blockquote, FAB all sized down on mobile
+- `img/svg/video { max-width: 100%; height: auto; }` global to prevent overflow
+
+## Verified
+- DOM measurements at 390px confirm: nav-links hidden, hamburger visible, hero 42.9px, section padding 64px, contact split single column, products spec bento single column, about pillars single column, comparison table overflow-x:auto
 
 ## Backlog
 - Add `/frontend` to `.gitignore` (it's only used by Emergent's supervisor to serve the static site on the preview URL — should not ship to Vercel).
