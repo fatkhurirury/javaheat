@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Contact JavaHeat — quotes, samples, B2B partnerships and export enquiries." />
+  <title>JavaHeat — Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://customer-assets.emergentagent.com/job_e04965c3-8ed4-4715-8caa-bc017e530dd1/artifacts/pw124b40_Logo.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="nav" id="site-nav" data-testid="nav-container"></header>
+
+  <main data-testid="contact-page">
+
+    <!-- HERO -->
+    <section style="padding-top:160px;padding-bottom:96px;border-bottom:1px solid var(--border);">
+      <div class="container-x">
+        <div class="grid-12" style="align-items:flex-end;">
+          <div class="col-span-7">
+            <p class="eyebrow" style="margin-bottom:32px;">Contact JavaHeat</p>
+            <h1 class="h-display text-balance" data-testid="contact-hero-headline" style="font-size:clamp(3rem, 8vw, 7rem);">
+              Speak with the people<br />
+              <em class="serif-em">behind the fire.</em>
+            </h1>
+          </div>
+          <div class="col-span-5">
+            <p class="lead" style="max-width:440px;color:var(--muted-foreground);">
+              Quotes, samples, B2B partnerships, hospitality and export enquiries. We reply within one business day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPLIT -->
+    <section class="contact-split">
+      <!-- LEFT — channels -->
+      <div class="contact-left">
+        <div class="bg-img" style="background-image:url('https://static.prod-images.emergentagent.com/jobs/e04965c3-8ed4-4715-8caa-bc017e530dd1/images/4546a48b51d14310efd4ea3388d1ee9be875a288c14757674ac787778ae32539.png');"></div>
+        <div class="veil"></div>
+        <div class="inner">
+          <div class="reveal">
+            <p class="eyebrow" style="color:rgba(255,255,255,0.6);margin-bottom:24px;">Direct Channels</p>
+            <h2 class="h2" style="font-size:clamp(1.75rem, 4vw, 3.25rem);">Three ways<br />to reach us.</h2>
+          </div>
+
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:40px;">
+            <a class="contact-channel reveal" data-delay="0.05" data-wa-default href="#" data-testid="contact-whatsapp-link">
+              <span class="ico-square wa" data-icon="phone"></span>
+              <span>
+                <p class="lbl">WhatsApp · Fastest</p>
+                <p class="val">+62 812-2844-6702</p>
+              </span>
+            </a>
+
+            <a class="contact-channel reveal" data-delay="0.1" data-mailto href="#" data-testid="contact-email-link">
+              <span class="ico-square email" data-icon="mail"></span>
+              <span>
+                <p class="lbl">Email</p>
+                <p class="val" style="word-break:break-all;">info@javaheat.com</p>
+              </span>
+            </a>
+
+            <div class="contact-channel reveal" data-delay="0.15">
+              <span class="ico-square map" data-icon="mapPin"></span>
+              <span>
+                <p class="lbl">Headquarters</p>
+                <p class="val">Central Java, Indonesia</p>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — form -->
+      <div class="contact-right">
+        <div class="inner">
+          <div class="reveal">
+            <p class="eyebrow" style="margin-bottom:24px;">Send a Message</p>
+            <h2 class="h2" style="font-size:clamp(1.75rem, 4vw, 3.25rem);">Tell us about your fire.</h2>
+          </div>
+
+          <form id="contact-form" data-testid="contact-form" novalidate style="margin-top:48px;display:flex;flex-direction:column;gap:32px;">
+            <div class="grid-2">
+              <label>
+                <span class="field-label">Full name *</span>
+                <input id="field-name" class="field-input" type="text" required data-testid="contact-input-name" />
+              </label>
+              <label>
+                <span class="field-label">Email *</span>
+                <input id="field-email" class="field-input" type="email" required data-testid="contact-input-email" />
+              </label>
+            </div>
+            <div class="grid-2">
+              <label>
+                <span class="field-label">Company (optional)</span>
+                <input id="field-company" class="field-input" type="text" data-testid="contact-input-company" />
+              </label>
+              <label>
+                <span class="field-label">Subject</span>
+                <input id="field-subject" class="field-input" type="text" data-testid="contact-input-subject" />
+              </label>
+            </div>
+            <label>
+              <span class="field-label">Message *</span>
+              <textarea id="field-message" class="field-textarea" rows="5" required data-testid="contact-input-message"></textarea>
+            </label>
+
+            <button id="submit-btn" type="submit" class="btn btn-primary" data-testid="contact-submit-btn" style="padding:20px 32px;align-self:flex-start;">
+              <span id="submit-label">Send Message</span>
+              <span data-icon="send"></span>
+            </button>
+
+            <div id="success-alert" data-testid="contact-success-alert" style="display:none;align-items:flex-start;gap:12px;border:1px solid rgba(10,10,10,0.3);padding:20px;">
+              <span style="width:16px;height:16px;margin-top:2px;" data-icon="check"></span>
+              <p id="success-text" style="font-size:14px;line-height:1.6;font-weight:300;margin:0;"></p>
+            </div>
+
+            <div id="error-alert" data-testid="contact-error-alert" style="display:none;align-items:flex-start;gap:12px;border:1px solid rgba(180,28,28,0.4);padding:20px;color:var(--destructive);">
+              <span style="width:16px;height:16px;margin-top:2px;" data-icon="check"></span>
+              <p id="error-text" style="font-size:14px;line-height:1.6;font-weight:300;margin:0;"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="site-footer" data-testid="footer-container"></footer>
+  <div id="wa-fab"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact.js"></script>
+</body>
+</html>
