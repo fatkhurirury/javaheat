@@ -86,3 +86,8 @@ android-sdk/
 credentials.json
 *.key
 .credentials
+
+
+# Emergent preview-only shim (serves the static site via supervisor).
+# NOT needed for Vercel deployment.
+/frontend/
