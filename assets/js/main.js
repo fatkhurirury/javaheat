@@ -101,12 +101,22 @@ function renderNav() {
     </div>
   `;
 
-  // Scroll behavior — switch to scrolled state past 24px
+  // Scroll behavior — switch to scrolled state past 24px (or, on dark-hero
+  // pages, only after the dark hero is no longer behind the nav so the menu
+  // never sits as dark-text on a dark hero).
+  const heroEl = document.querySelector(".hero");
   const onScroll = () => {
-    host.classList.toggle("scrolled", window.scrollY > 24);
+    let pastHero;
+    if (darkHero && heroEl) {
+      pastHero = heroEl.getBoundingClientRect().bottom <= 8;
+    } else {
+      pastHero = window.scrollY > 24;
+    }
+    host.classList.toggle("scrolled", pastHero);
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
 
   // Mobile toggle
   const toggle = document.getElementById("nav-toggle");
