@@ -82,39 +82,68 @@
      ACT I — THE SILENT CRISIS
      ============================================================ -->
 
-<!-- CRISIS — manifesto opening -->
+<!-- CRISIS — editorial manifesto -->
 <section class="section bg-dark grain crisis-hero" data-testid="home-crisis" style="position:relative;overflow:hidden;">
   <div class="crisis-bg" aria-hidden="true" style="background-image:url('https://images.pexels.com/photos/1043458/pexels-photo-1043458.jpeg');"></div>
   <div class="crisis-veil" aria-hidden="true"></div>
-  <div class="container-x" style="position:relative;">
-    <div class="grid-12" style="align-items:flex-end;">
-      <div class="reveal col-span-4">
-        <p class="eyebrow" style="color:rgba(255,255,255,0.55);">The truth about charcoal</p>
-      </div>
-      <div class="reveal col-span-8" data-delay="0.05">
-        <h2 class="h-display text-balance" style="font-size:clamp(2.75rem, 8vw, 7.5rem);">
-          A forest dies<br />
-          <em class="serif-em" style="color:#fff;opacity:0.85;">every 60 seconds —</em><br />
-          so someone can cook dinner.
-        </h2>
-      </div>
+
+  <div class="container-x crisis-inner">
+
+    <!-- Top label band -->
+    <div class="crisis-bar reveal">
+      <span class="crisis-chapter">01 — The crisis</span>
+      <span class="crisis-progress" aria-hidden="true"><span class="crisis-progress-fill"></span></span>
+      <span class="crisis-live"><span class="crisis-dot" aria-hidden="true"></span> Live · global</span>
     </div>
 
-    <div class="reveal" data-delay="0.15" style="margin-top:80px;display:grid;gap:32px;grid-template-columns:1fr;max-width:880px;">
-      <p class="lead" style="color:rgba(255,255,255,0.78);">
-        Charcoal is the daily cooking fuel for nearly a third of humanity. Almost none of it is graded.
-        Almost none of it is traceable. Most of it is made by burning down ancient forests —
-        quietly, anonymously, ton by ton, for cents per kilo.
+    <!-- Editorial statement: words stack per line + side panel of facts -->
+    <div class="crisis-stage">
+      <div class="crisis-words">
+        <p class="crisis-pre reveal" data-delay="0.05">While you read this sentence,</p>
+        <h2 class="crisis-headline" data-testid="crisis-headline">
+          <span class="cw reveal" data-delay="0.1">Every</span>
+          <span class="cw reveal" data-delay="0.18"><em>sixty</em></span>
+          <span class="cw reveal" data-delay="0.26">seconds</span>
+          <span class="cw cw-soft reveal" data-delay="0.34">an <em>ancient&nbsp;forest</em></span>
+          <span class="cw cw-soft reveal" data-delay="0.42">falls — so someone</span>
+          <span class="cw cw-soft reveal" data-delay="0.5">can cook dinner.</span>
+        </h2>
+      </div>
+
+      <aside class="crisis-side reveal" data-delay="0.55" aria-label="Inline industry facts">
+        <article class="cs-fact" data-testid="crisis-fact-1">
+          <p class="cs-k">For every kilo of charcoal,</p>
+          <p class="cs-v">≈ 6 kg of wood</p>
+          <p class="cs-s">Average industry yield</p>
+        </article>
+        <article class="cs-fact" data-testid="crisis-fact-2">
+          <p class="cs-k">A forest the size of</p>
+          <p class="cs-v">Belgium</p>
+          <p class="cs-s">cleared every year — FAO estimates</p>
+        </article>
+        <article class="cs-fact" data-testid="crisis-fact-3">
+          <p class="cs-k">Global eco-friendly charcoal standards in force</p>
+          <p class="cs-v">0</p>
+          <p class="cs-s">JavaHeat exists to change that.</p>
+        </article>
+      </aside>
+    </div>
+
+    <!-- Foot: small context + jump-to-data -->
+    <div class="crisis-foot reveal" data-delay="0.6">
+      <p class="crisis-foot-text">
+        Charcoal is the daily cooking fuel for nearly a third of humanity — an industry the size of global aviation operating without a single enforced ecological standard.
       </p>
-      <p class="lead" style="color:rgba(255,255,255,0.78);">
-        We let an industry the size of global aviation operate without a single ecological standard.
-      </p>
+      <a class="crisis-jump" href="#crisis-numbers" data-testid="crisis-jump-cta">
+        <span>See the numbers</span>
+        <span class="crisis-jump-arrow" aria-hidden="true">↓</span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- THE DATA — 4 big numbers -->
-<section class="section bg-dark border-y-thin" data-testid="home-crisis-numbers" style="border-color:rgba(255,255,255,0.1);padding-top:24px;padding-bottom:0;">
+<section class="section bg-dark border-y-thin" id="crisis-numbers" data-testid="home-crisis-numbers" style="border-color:rgba(255,255,255,0.1);padding-top:24px;padding-bottom:0;">
   <div class="container-x">
     <div class="reveal" style="margin-bottom:48px;">
       <p class="eyebrow" style="color:rgba(255,255,255,0.55);">The numbers nobody quotes</p>
