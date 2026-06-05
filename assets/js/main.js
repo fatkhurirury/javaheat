@@ -58,6 +58,9 @@ function renderNav() {
   const isProducts = path.endsWith("/products.html");
   const isContact = path.endsWith("/contact.html");
 
+  const darkHero = isHome || isAbout;
+  host.classList.toggle("light-page", !darkHero);
+
   const links = [
     { href: "index.html", label: "Home", active: isHome },
     { href: "products.html", label: "Products", active: isProducts },
@@ -98,21 +101,17 @@ function renderNav() {
     </div>
   `;
 
-  // Scroll behavior — auto-switch nav theme based on the section currently behind it.
-  // Dark sections include .bg-dark, .hero, .crisis-hero, .reforest-hero, and any
-  // element flagged with data-nav-bg="dark".
-  const darkSel = '.bg-dark, .hero, .crisis-hero, .reforest-hero, [data-nav-bg="dark"]';
-  const navProbeY = 32; // a few px below the nav top edge
+  // Scroll behavior — only switch to "scrolled" (light bar) state AFTER user has
+  // scrolled past the dark hero. On light-hero pages, trigger immediately.
+  const heroEl = document.querySelector(".hero");
   const updateNav = () => {
-    let onDark = false;
-    document.querySelectorAll(darkSel).forEach((el) => {
-      const r = el.getBoundingClientRect();
-      if (r.top <= navProbeY && r.bottom > navProbeY) onDark = true;
-    });
-    host.classList.toggle("nav-on-dark", onDark);
-    host.classList.toggle("nav-on-light", !onDark);
-    // Add blurred bg only when on light section AND user has scrolled past top
-    host.classList.toggle("scrolled", !onDark && window.scrollY > 24);
+    let pastHero;
+    if (darkHero && heroEl) {
+      pastHero = heroEl.getBoundingClientRect().bottom <= 8;
+    } else {
+      pastHero = window.scrollY > 24;
+    }
+    host.classList.toggle("scrolled", pastHero);
   };
   updateNav();
   window.addEventListener("scroll", updateNav, { passive: true });

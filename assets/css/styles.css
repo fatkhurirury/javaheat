@@ -238,33 +238,38 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease;
   color: #fff;
 }
-/* Subtle gradient kept only for very initial state — disabled by default */
-.nav::before { display: none; }
+/* Soft top gradient so nav text is readable on dark hero pages */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  opacity: 1;
+}
+.nav.light-page::before,
+.nav.scrolled::before { opacity: 0; }
 .nav .nav-inner,
 .nav .nav-mobile-sheet { position: relative; z-index: 1; }
 
-/* On-dark state — dark blurred bar */
-.nav.nav-on-dark {
-  color: #fff;
-  background: rgba(10,10,10,0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.nav.nav-on-dark .nav-logo-mark { background: #fff; }
-.nav.nav-on-dark .nav-logo-mark img { filter: none; }
+/* Light-page (non-dark-hero pages) — dark text from the start */
+.nav.light-page { color: var(--foreground); }
+.nav.light-page .nav-logo-mark { background: var(--foreground); }
+.nav.light-page .nav-logo-mark img { filter: invert(1); }
 
-/* On-light state — light blurred bar */
-.nav.nav-on-light {
-  color: var(--foreground);
+/* Scrolled state (past hero) — light blurred bar with dark text */
+.nav.scrolled {
   background: rgba(252,252,252,0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(230,230,230,0.6);
+  color: var(--foreground);
 }
-.nav.nav-on-light .nav-logo-mark { background: var(--foreground); }
-.nav.nav-on-light .nav-logo-mark img { filter: invert(1); }
-/* Legacy .scrolled class kept harmless — actual styling is via nav-on-dark/light */
+.nav.scrolled .nav-logo-mark { background: var(--foreground); }
+.nav.scrolled .nav-logo-mark img { filter: invert(1); }
+/* (nav scrolled / light-page styles defined above) */
 .nav-inner {
   max-width: 1400px;
   margin: 0 auto;
