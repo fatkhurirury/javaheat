@@ -58,9 +58,6 @@ function renderNav() {
   const isProducts = path.endsWith("/products.html");
   const isContact = path.endsWith("/contact.html");
 
-  const darkHero = isHome || isAbout;
-  host.classList.toggle("light-page", !darkHero);
-
   const links = [
     { href: "index.html", label: "Home", active: isHome },
     { href: "products.html", label: "Products", active: isProducts },
@@ -101,12 +98,24 @@ function renderNav() {
     </div>
   `;
 
-  // Scroll behavior — switch to scrolled state past 24px
-  const onScroll = () => {
-    host.classList.toggle("scrolled", window.scrollY > 24);
+  // Auto-adaptive nav theme — text color flips based on the section currently
+  // behind the nav. Dark sections include .bg-dark, .hero, .crisis-hero,
+  // .reforest-hero (or any element flagged with data-nav-bg="dark").
+  // The .scrolled class (light blurred bar) still triggers after 24px of scroll.
+  const darkSel = '.bg-dark, .hero, .crisis-hero, .reforest-hero, [data-nav-bg="dark"]';
+  const NAV_PROBE_Y = 32;
+  const updateNav = () => {
+    let onDark = false;
+    document.querySelectorAll(darkSel).forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top <= NAV_PROBE_Y && r.bottom > NAV_PROBE_Y) onDark = true;
+    });
+    host.classList.toggle("on-light", !onDark);
+    host.classList.toggle("scrolled", !onDark && window.scrollY > 24);
   };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  updateNav();
+  window.addEventListener("scroll", updateNav, { passive: true });
+  window.addEventListener("resize", updateNav);
 
   // Mobile toggle
   const toggle = document.getElementById("nav-toggle");
