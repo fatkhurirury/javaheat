@@ -58,6 +58,9 @@ function renderNav() {
   const isProducts = path.endsWith("/products.html");
   const isContact = path.endsWith("/contact.html");
 
+  const darkHero = isHome || isAbout;
+  host.classList.toggle("light-page", !darkHero);
+
   const links = [
     { href: "index.html", label: "Home", active: isHome },
     { href: "products.html", label: "Products", active: isProducts },
@@ -98,22 +101,12 @@ function renderNav() {
     </div>
   `;
 
-  // Adaptive INVERTED nav theme — the menu bar is always the OPPOSITE color
-  // of the section currently behind it (light bar over dark, dark bar over light).
-  const darkSel = '.bg-dark, .hero, .crisis-hero, .reforest-hero, [data-nav-bg="dark"]';
-  const NAV_PROBE_Y = 32;
-  const updateNav = () => {
-    let onDark = false;
-    document.querySelectorAll(darkSel).forEach((el) => {
-      const r = el.getBoundingClientRect();
-      if (r.top <= NAV_PROBE_Y && r.bottom > NAV_PROBE_Y) onDark = true;
-    });
-    host.classList.toggle("over-dark", onDark);
-    host.classList.toggle("over-light", !onDark);
+  // Scroll behavior — switch to scrolled state past 24px
+  const onScroll = () => {
+    host.classList.toggle("scrolled", window.scrollY > 24);
   };
-  updateNav();
-  window.addEventListener("scroll", updateNav, { passive: true });
-  window.addEventListener("resize", updateNav);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 
   // Mobile toggle
   const toggle = document.getElementById("nav-toggle");
