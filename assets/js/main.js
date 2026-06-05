@@ -101,21 +101,12 @@ function renderNav() {
     </div>
   `;
 
-  // Scroll behavior — only switch to "scrolled" (light bar) state AFTER user has
-  // scrolled past the dark hero. On light-hero pages, trigger immediately.
-  const heroEl = document.querySelector(".hero");
-  const updateNav = () => {
-    let pastHero;
-    if (darkHero && heroEl) {
-      pastHero = heroEl.getBoundingClientRect().bottom <= 8;
-    } else {
-      pastHero = window.scrollY > 24;
-    }
-    host.classList.toggle("scrolled", pastHero);
+  // Scroll behavior — switch to scrolled state past 24px
+  const onScroll = () => {
+    host.classList.toggle("scrolled", window.scrollY > 24);
   };
-  updateNav();
-  window.addEventListener("scroll", updateNav, { passive: true });
-  window.addEventListener("resize", updateNav);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 
   // Mobile toggle
   const toggle = document.getElementById("nav-toggle");

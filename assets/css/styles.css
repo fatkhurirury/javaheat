@@ -235,29 +235,9 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 50;
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease;
   color: #fff;
 }
-/* Soft top gradient so nav text is readable on dark hero pages */
-.nav::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  height: 140px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 100%);
-  pointer-events: none;
-  opacity: 1;
-}
-.nav.light-page::before,
-.nav.scrolled::before { opacity: 0; }
-.nav .nav-inner,
-.nav .nav-mobile-sheet { position: relative; z-index: 1; }
-
-/* Light-page (non-dark-hero pages) — dark text from the start */
-.nav.light-page { color: var(--foreground); }
-.nav.light-page .nav-logo-mark { background: var(--foreground); }
-.nav.light-page .nav-logo-mark img { filter: invert(1); }
-
-/* Scrolled state (past hero) — light blurred bar with dark text */
 .nav.scrolled {
   background: rgba(252,252,252,0.85);
   backdrop-filter: blur(20px);
@@ -265,8 +245,7 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   border-bottom: 1px solid rgba(230,230,230,0.6);
   color: var(--foreground);
 }
-.nav.scrolled .nav-logo-mark { background: var(--foreground); }
-.nav.scrolled .nav-logo-mark img { filter: invert(1); }
+.nav.light-page { color: var(--foreground); }
 /* (nav scrolled / light-page styles defined above) */
 .nav-inner {
   max-width: 1400px;
@@ -281,8 +260,13 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   height: 36px; width: 36px;
   align-items: center; justify-content: center;
   background: #fff;
+  transition: background-color 0.4s ease;
 }
+.nav.scrolled .nav-logo-mark,
+.nav.light-page .nav-logo-mark { background: var(--foreground); }
 .nav-logo-mark img { height: 28px; width: 28px; object-fit: contain; }
+.nav.scrolled .nav-logo-mark img,
+.nav.light-page .nav-logo-mark img { filter: invert(1); }
 .nav-title { font-family: var(--font-serif); font-size: 20px; line-height: 1; }
 .nav-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; opacity: 0.7; margin-top: 2px; }
 .nav-links { display: none; gap: 48px; align-items: center; }
