@@ -13,7 +13,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: clip; }
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -604,6 +604,29 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
 
 /* Mobile (<= 767px) */
 @media (max-width: 767px) {
+  /* ROOT FIX: kill horizontal overflow caused by 12-col grid + large inline gaps.
+     On mobile, collapse all grid-12 layouts into a single-column stack. */
+  .grid-12 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .grid-12 > * {
+    grid-column: 1 / -1 !important;
+    min-width: 0 !important;
+  }
+
+  /* Override any inline column-span on direct grid children (safety) */
+  .col-span-3, .col-span-4, .col-span-5, .col-span-6,
+  .col-span-7, .col-span-8, .col-span-9, .col-span-12 {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Generic safety against any inline large gap pushing layout */
+  [style*="gap:80px"], [style*="gap: 80px"]   { gap: 32px !important; }
+  [style*="gap:64px"], [style*="gap: 64px"]   { gap: 28px !important; }
+  [style*="gap:48px"], [style*="gap: 48px"]   { gap: 24px !important; }
+
   /* Spacing */
   .section { padding: 64px 0; }
   .section-tight { padding: 56px 0; }
@@ -619,9 +642,6 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   .h3 { font-size: clamp(1.5rem, 5vw, 2rem); }
   .blockquote p { font-size: clamp(1.375rem, 6vw, 2rem) !important; }
   .lead { font-size: 16px; line-height: 1.65; }
-
-  /* Grid — force all 12-col children to span 12 (CSS rule above already does this) */
-  .grid-12 { gap: 32px; }
 
   /* 3-col bento → single column on mobile (stats are too tight at 3-col) */
   .bento[style*="grid-template-columns:repeat(3"],
@@ -641,11 +661,12 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   .stat-cell .v { font-size: clamp(2rem, 8vw, 3rem); }
 
   /* Spec cell padding */
-  .spec-cell { padding: 20px; }
-  .spec-cell .v { font-size: 18px; }
+  .spec-cell { padding: 20px 16px; }
+  .spec-cell .v { font-size: 16px; }
+  .spec-cell .k { font-size: 9px; }
 
   /* Grade row */
-  .grade-row { padding: 24px; gap: 16px; }
+  .grade-row { padding: 24px 20px; gap: 16px; }
   .grade-row .num { font-size: 22px; }
   .grade-row .body p { font-size: 14px; }
 
@@ -660,7 +681,8 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   .cta-stack .btn { width: 100%; justify-content: space-between; }
   .flex-row.flex-wrap.gap-3 .btn { flex: 1 1 auto; min-width: 0; }
 
-  /* Marquee — smaller */
+  /* Marquee — smaller; absolute width clamp to viewport */
+  .marquee { max-width: 100vw; }
   .marquee-track { gap: 32px; padding: 16px 0; font-size: 10px; }
   .marquee-track > div { gap: 32px; }
 
@@ -674,14 +696,14 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   .blockquote { padding-left: 20px; border-left-width: 2px; }
 
   /* Comparison table — already overflow-x:auto wrapper */
-  .tbl-compare { font-size: 13px; min-width: 600px; }
-  .tbl-compare th, .tbl-compare td { padding: 12px 16px; }
+  .tbl-compare { font-size: 13px; min-width: 560px; }
+  .tbl-compare th, .tbl-compare td { padding: 12px 14px; }
   .tbl-compare thead th:not(:first-child) { font-size: 16px; }
 
   /* Contact split */
   .contact-left, .contact-right { min-height: auto; }
   .contact-left .inner { padding: 56px 24px; gap: 32px; min-height: 460px; }
-  .contact-right .inner { padding: 56px 24px; }
+  .contact-right .inner { padding: 56px 24px; max-width: 100%; }
   .contact-channel .val { font-size: 1.25rem !important; }
 
   /* Footer */
@@ -693,21 +715,21 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   .nav-mobile-sheet a { font-size: 26px; }
   .nav-mobile-sheet .inner { padding: 24px 20px; gap: 18px; }
 
-  /* WhatsApp FAB smaller on mobile (already smaller — keep) */
+  /* WhatsApp FAB smaller on mobile */
   .wa-fab { bottom: 16px; right: 16px; height: 52px; width: 52px; }
   .wa-fab svg { height: 26px; width: 26px; }
 
-  /* Generic inline large gaps fix for grid split layouts */
-  [style*="gap:80px"],
-  [style*="gap: 80px"] { gap: 40px !important; }
-  [style*="gap:64px"],
-  [style*="gap: 64px"] { gap: 32px !important; }
+  /* Hero badge: prevent absolute-positioned badge-row from breaking outside */
+  .aspect-4-5 .badge-row { right: 16px; }
 
   /* Force About + Products hero to wrap nicely */
   section[style*="padding-top:160px"] { padding-top: 120px !important; padding-bottom: 64px !important; }
 
   /* Tabular wrap visual hint */
   .tbl-wrap { margin-top: 32px; }
+
+  /* Long unbreakable strings (URLs, emails) should wrap */
+  p, h1, h2, h3, h4, a, span, li { overflow-wrap: anywhere; word-break: break-word; }
 }
 
 /* Extra-small (<= 480px) */
