@@ -63,8 +63,8 @@ function renderNav() {
 
   const links = [
     { href: "index.html", label: "Home", active: isHome },
-    { href: "about.html", label: "About", active: isAbout },
     { href: "products.html", label: "Products", active: isProducts },
+    { href: "about.html", label: "About", active: isAbout },
     { href: "contact.html", label: "Contact", active: isContact },
   ];
 
