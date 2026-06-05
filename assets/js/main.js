@@ -98,10 +98,8 @@ function renderNav() {
     </div>
   `;
 
-  // Auto-adaptive nav theme — text color flips based on the section currently
-  // behind the nav. Dark sections include .bg-dark, .hero, .crisis-hero,
-  // .reforest-hero (or any element flagged with data-nav-bg="dark").
-  // The .scrolled class (light blurred bar) still triggers after 24px of scroll.
+  // Adaptive INVERTED nav theme — the menu bar is always the OPPOSITE color
+  // of the section currently behind it (light bar over dark, dark bar over light).
   const darkSel = '.bg-dark, .hero, .crisis-hero, .reforest-hero, [data-nav-bg="dark"]';
   const NAV_PROBE_Y = 32;
   const updateNav = () => {
@@ -110,8 +108,8 @@ function renderNav() {
       const r = el.getBoundingClientRect();
       if (r.top <= NAV_PROBE_Y && r.bottom > NAV_PROBE_Y) onDark = true;
     });
-    host.classList.toggle("on-light", !onDark);
-    host.classList.toggle("scrolled", !onDark && window.scrollY > 24);
+    host.classList.toggle("over-dark", onDark);
+    host.classList.toggle("over-light", !onDark);
   };
   updateNav();
   window.addEventListener("scroll", updateNav, { passive: true });

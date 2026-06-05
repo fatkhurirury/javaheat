@@ -238,14 +238,22 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease;
   color: #fff;
 }
-.nav.scrolled {
+/* OVER A DARK SECTION → light blurred bar with dark text */
+.nav.over-dark {
   background: rgba(252,252,252,0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(230,230,230,0.6);
   color: var(--foreground);
 }
-.nav.on-light { color: var(--foreground); }
+/* OVER A LIGHT SECTION → dark blurred bar with white text */
+.nav.over-light {
+  background: rgba(10,10,10,0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+}
 /* (nav scrolled / light-page styles defined above) */
 .nav-inner {
   max-width: 1400px;
@@ -262,11 +270,11 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   background: #fff;
   transition: background-color 0.4s ease;
 }
-.nav.scrolled .nav-logo-mark,
-.nav.on-light .nav-logo-mark { background: var(--foreground); }
+.nav.over-dark .nav-logo-mark { background: var(--foreground); }
+.nav.over-light .nav-logo-mark { background: #fff; }
 .nav-logo-mark img { height: 28px; width: 28px; object-fit: contain; }
-.nav.scrolled .nav-logo-mark img,
-.nav.on-light .nav-logo-mark img { filter: invert(1); }
+.nav.over-dark .nav-logo-mark img { filter: invert(1); }
+.nav.over-light .nav-logo-mark img { filter: none; }
 .nav-title { font-family: var(--font-serif); font-size: 20px; line-height: 1; }
 .nav-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; opacity: 0.7; margin-top: 2px; }
 .nav-links { display: none; gap: 48px; align-items: center; }
