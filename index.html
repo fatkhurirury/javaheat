@@ -39,11 +39,8 @@
               Engineered in Java. Sorted by science. Crafted for the world's most discerning grills, lounges and restaurants.
             </p>
             <div class="col-span-5 flex-row flex-wrap gap-3" style="justify-content:flex-start;">
-              <a class="btn btn-light" data-testid="home-cta-whatsapp" data-wa-default href="#">
-                Chat on WhatsApp <span data-icon="arrowRight"></span>
-              </a>
-              <a class="btn btn-outline-light" data-testid="home-cta-explore" href="#product">
-                Explore Plus Value
+              <a class="btn btn-light" data-testid="home-cta-explore" href="#product">
+                Explore Plus Value <span data-icon="arrowRight"></span>
               </a>
             </div>
           </div>
@@ -180,10 +177,7 @@
                 then calibrated against a rigorous burn-profile standard before it ever leaves our facility in Java.
               </p>
               <div class="cta-stack" style="margin-top:40px;">
-                <a class="btn btn-primary" data-wa-msg="Hello JavaHeat, I would like a Plus Value quotation." href="#">
-                  Request a Plus Value Quote <span data-icon="arrowRight"></span>
-                </a>
-                <a class="btn btn-outline" data-testid="home-see-all-grades" href="products.html">
+                <a class="btn btn-primary-invert" data-testid="home-see-all-grades" href="products.html">
                   See all 3 grades <span data-icon="arrowRight"></span>
                 </a>
               </div>
@@ -228,11 +222,6 @@
               A different idea of what<br />
               charcoal can be.
             </h2>
-          </div>
-        </div>
-
-        <div class="bento bento-dark" style="grid-template-columns:repeat(1,1fr);">
-          <div class="bento bento-dark" style="grid-template-columns:repeat(1,1fr);">
           </div>
         </div>
 
@@ -334,27 +323,61 @@
       </div>
     </section>
 
-    <!-- FINAL CTA -->
-    <section class="section" data-testid="home-cta-footer-block">
+    <!-- GET STARTED -->
+    <section class="section bg-dark" data-testid="home-get-started" style="position:relative;overflow:hidden;">
       <div class="container-x">
-        <div class="grid-12" style="align-items:flex-end;">
-          <div class="reveal col-span-8">
-            <h2 class="h1 text-balance">
-              Bring Plus Value<br />
-              to your fire.
+        <div class="grid-12" style="align-items:flex-end;margin-bottom:80px;">
+          <div class="reveal col-span-3">
+            <p class="eyebrow" style="color:rgba(255,255,255,0.6);">Get started</p>
+          </div>
+          <div class="reveal col-span-9" data-delay="0.05">
+            <h2 class="h2 text-balance">
+              Three steps to your<br />
+              <em class="serif-em">first JavaHeat shipment.</em>
             </h2>
-            <p class="lead" style="margin-top:24px;max-width:560px;color:var(--muted-foreground);">
-              Quotes, samples, B2B and export enquiries — reach the JavaHeat team directly. We typically reply within one business day.
-            </p>
           </div>
-          <div class="reveal col-span-4 cta-stack" data-delay="0.1" style="align-items:stretch;">
-            <a class="btn btn-primary" data-wa-default href="#" style="padding:20px 28px;justify-content:space-between;">
-              Chat on WhatsApp <span data-icon="arrowRight"></span>
-            </a>
-            <a class="btn btn-outline" href="contact.html" style="padding:20px 28px;justify-content:space-between;">
-              Send a Message <span data-icon="arrowRight"></span>
-            </a>
-          </div>
+        </div>
+
+        <ol class="get-started" data-testid="get-started-steps">
+          <li class="gs-step reveal" data-testid="gs-step-1">
+            <div class="gs-num">01</div>
+            <div class="gs-body">
+              <h3 class="h3">Tell us your fire</h3>
+              <p>Share what you're cooking on, how much volume per month, and where you want it shipped. A short message is enough.</p>
+              <a class="gs-link" href="contact.html" data-testid="gs-step-1-cta">
+                Send a message <span data-icon="arrowRight"></span>
+              </a>
+            </div>
+          </li>
+          <li class="gs-step reveal" data-delay="0.08" data-testid="gs-step-2">
+            <div class="gs-num">02</div>
+            <div class="gs-body">
+              <h3 class="h3">Receive grade &amp; quote</h3>
+              <p>We propose the right grade — Plus Value, Premium or Eco Standard — along with packaging, lead time and FOB pricing.</p>
+              <a class="gs-link" href="products.html" data-testid="gs-step-2-cta">
+                Compare grades <span data-icon="arrowRight"></span>
+              </a>
+            </div>
+          </li>
+          <li class="gs-step reveal" data-delay="0.16" data-testid="gs-step-3">
+            <div class="gs-num">03</div>
+            <div class="gs-body">
+              <h3 class="h3">Light it up</h3>
+              <p>Sample carton in 7 days. Full container in 4–6 weeks. We follow every batch through customs to your loading dock.</p>
+              <a class="gs-link" data-wa-default href="#" data-testid="gs-step-3-cta">
+                Chat on WhatsApp <span data-icon="arrowRight"></span>
+              </a>
+            </div>
+          </li>
+        </ol>
+
+        <div class="reveal" data-delay="0.24" style="margin-top:64px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
+          <p class="text-sm-soft" style="margin:0;max-width:520px;">
+            Quotes, samples, B2B and export enquiries — we typically reply within one business day.
+          </p>
+          <a class="btn btn-light" data-wa-default href="#" data-testid="get-started-primary-cta">
+            Start the conversation <span data-icon="arrowRight"></span>
+          </a>
         </div>
       </div>
     </section>

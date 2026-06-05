@@ -85,10 +85,6 @@ function renderNav() {
           )
           .join("")}
       </nav>
-      <a class="btn btn-light nav-cta" data-testid="nav-whatsapp-cta" target="_blank" rel="noopener noreferrer" href="${buildWhatsAppHref()}" style="padding:12px 24px;">
-        <span style="display:inline-flex;width:14px;height:14px;">${WA_GLYPH}</span>
-        Chat on WhatsApp
-      </a>
       <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" data-testid="nav-mobile-toggle">
         <span id="nav-toggle-icon" style="display:inline-flex;width:20px;height:20px;">${ICONS.menu}</span>
       </button>
@@ -101,10 +97,6 @@ function renderNav() {
               `<a class="${l.active ? "active" : ""}" href="${l.href}" data-testid="nav-link-${l.label.toLowerCase()}-mobile">${l.label}</a>`,
           )
           .join("")}
-        <a class="btn btn-primary" href="${buildWhatsAppHref()}" target="_blank" rel="noopener noreferrer" style="justify-content:center;">
-          <span style="display:inline-flex;width:16px;height:16px;">${WA_GLYPH}</span>
-          Chat on WhatsApp
-        </a>
       </div>
     </div>
   `;
