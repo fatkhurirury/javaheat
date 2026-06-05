@@ -249,10 +249,20 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   transition: opacity 0.4s ease;
   opacity: 1;
 }
-.nav.light-page::before,
+.nav.nav-on-light::before { opacity: 0; }
 .nav.scrolled::before { opacity: 0; }
 .nav .nav-inner,
 .nav .nav-mobile-sheet { position: relative; z-index: 1; }
+
+/* On-dark state (default — keeps white text) */
+.nav.nav-on-dark { color: #fff; background: transparent; backdrop-filter: none; border-bottom-color: transparent; }
+.nav.nav-on-dark .nav-logo-mark { background: #fff; }
+.nav.nav-on-dark .nav-logo-mark img { filter: none; }
+
+/* On-light state — dark text, logo mark dark with inverted icon */
+.nav.nav-on-light { color: var(--foreground); }
+.nav.nav-on-light .nav-logo-mark { background: var(--foreground); }
+.nav.nav-on-light .nav-logo-mark img { filter: invert(1); }
 .nav.scrolled {
   background: rgba(252,252,252,0.85);
   backdrop-filter: blur(20px);
@@ -260,7 +270,8 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   border-bottom: 1px solid rgba(230,230,230,0.6);
   color: var(--foreground);
 }
-.nav.light-page { color: var(--foreground); }
+.nav.scrolled .nav-logo-mark { background: var(--foreground); }
+.nav.scrolled .nav-logo-mark img { filter: invert(1); }
 .nav-inner {
   max-width: 1400px;
   margin: 0 auto;
@@ -276,11 +287,7 @@ em.serif-em { font-style: normal; color: var(--muted-foreground); }
   background: #fff;
   transition: background-color 0.4s ease;
 }
-.nav.scrolled .nav-logo-mark,
-.nav.light-page .nav-logo-mark { background: var(--foreground); }
 .nav-logo-mark img { height: 28px; width: 28px; object-fit: contain; }
-.nav.scrolled .nav-logo-mark img,
-.nav.light-page .nav-logo-mark img { filter: invert(1); }
 .nav-title { font-family: var(--font-serif); font-size: 20px; line-height: 1; }
 .nav-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; opacity: 0.7; margin-top: 2px; }
 .nav-links { display: none; gap: 48px; align-items: center; }
