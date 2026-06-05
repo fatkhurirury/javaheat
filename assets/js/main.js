@@ -58,7 +58,7 @@ function renderNav() {
   const isProducts = path.endsWith("/products.html");
   const isContact = path.endsWith("/contact.html");
 
-  const darkHero = isHome || isAbout;
+  const darkHero = isHome || isAbout || isProducts;
   host.classList.toggle("light-page", !darkHero);
 
   const links = [

@@ -18,18 +18,20 @@
   <main data-testid="products-page">
 
     <!-- HERO -->
-    <section style="padding-top:160px;padding-bottom:96px;border-bottom:1px solid var(--border);">
-      <div class="container-x">
+    <section class="hero hero-90 grain" data-testid="products-hero" style="min-height:80vh;">
+      <div class="hero-bg" style="background-image:url('https://static.prod-images.emergentagent.com/jobs/e04965c3-8ed4-4715-8caa-bc017e530dd1/images/4546a48b51d14310efd4ea3388d1ee9be875a288c14757674ac787778ae32539.png');opacity:0.55;" aria-hidden="true"></div>
+      <div class="hero-veil" aria-hidden="true"></div>
+      <div class="hero-inner">
         <div class="grid-12" style="align-items:flex-end;">
           <div class="reveal col-span-8">
-            <p class="eyebrow" style="margin-bottom:32px;">JavaHeat · Eco-Graded Products</p>
+            <p class="eyebrow" style="color:rgba(255,255,255,0.7);margin-bottom:32px;">JavaHeat · Eco-Graded Products</p>
             <h1 class="h-display text-balance" data-testid="products-hero-headline" style="font-size:clamp(3rem, 8vw, 7rem);">
               Three grades.<br />
-              <em class="serif-em">One standard.</em>
+              <em class="serif-em" style="color:#fff;opacity:0.95;">One standard.</em>
             </h1>
           </div>
-          <div class="col-span-4">
-            <p class="lead" style="max-width:440px;color:var(--muted-foreground);">
+          <div class="reveal col-span-4" data-delay="0.08">
+            <p class="lead" style="max-width:440px;color:rgba(255,255,255,0.78);">
               Every JavaHeat product passes the same eco-grading system before it leaves Java. The grade is the promise of how it will burn — and the proof of how it was made.
             </p>
           </div>
