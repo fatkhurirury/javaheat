@@ -77,251 +77,337 @@
       </div>
     </section>
 
-    <!-- ECO-GRADING SYSTEM -->
-    <section class="section" id="grading-system" data-testid="home-grading-system">
-      <div class="container-x">
-        <div class="grid-12" style="align-items:flex-end;margin-bottom:96px;">
-          <div class="reveal col-span-3">
-            <p class="eyebrow">The Foundation</p>
-          </div>
-          <div class="reveal col-span-9" data-delay="0.05">
-            <h2 class="h2 text-balance">
-              Before we talk products,<br />
-              <em class="serif-em">meet our grading system.</em>
-            </h2>
-          </div>
-        </div>
 
-        <div class="grid-12" style="gap:80px;align-items:flex-start;">
-          <div class="reveal col-span-5 lg-sticky-top">
-            <p class="lead" style="max-width:460px;">
-              Charcoal has always been sold by trust alone — a fuel without a standard. JavaHeat changes that.
-              The <strong style="font-weight:500;">Eco-Grading System</strong> is the first formal framework that scores
-              charcoal across four eco-friendly criteria before a single piece is packaged. It is what makes
-              Plus Value possible — and it is what makes every JavaHeat product different.
-            </p>
-            <a class="btn btn-outline" href="#product" style="margin-top:40px;">
-              Then meet the product <span data-icon="arrowRight"></span>
+<!-- ============================================================
+     ACT I — THE SILENT CRISIS
+     ============================================================ -->
+
+<!-- CRISIS — manifesto opening -->
+<section class="section bg-dark grain crisis-hero" data-testid="home-crisis" style="position:relative;overflow:hidden;">
+  <div class="crisis-bg" aria-hidden="true" style="background-image:url('https://images.pexels.com/photos/1043458/pexels-photo-1043458.jpeg');"></div>
+  <div class="crisis-veil" aria-hidden="true"></div>
+  <div class="container-x" style="position:relative;">
+    <div class="grid-12" style="align-items:flex-end;">
+      <div class="reveal col-span-4">
+        <p class="eyebrow" style="color:rgba(255,255,255,0.55);">The truth about charcoal</p>
+      </div>
+      <div class="reveal col-span-8" data-delay="0.05">
+        <h2 class="h-display text-balance" style="font-size:clamp(2.75rem, 8vw, 7.5rem);">
+          A forest dies<br />
+          <em class="serif-em" style="color:#fff;opacity:0.85;">every 60 seconds —</em><br />
+          so someone can cook dinner.
+        </h2>
+      </div>
+    </div>
+
+    <div class="reveal" data-delay="0.15" style="margin-top:80px;display:grid;gap:32px;grid-template-columns:1fr;max-width:880px;">
+      <p class="lead" style="color:rgba(255,255,255,0.78);">
+        Charcoal is the daily cooking fuel for nearly a third of humanity. Almost none of it is graded.
+        Almost none of it is traceable. Most of it is made by burning down ancient forests —
+        quietly, anonymously, ton by ton, for cents per kilo.
+      </p>
+      <p class="lead" style="color:rgba(255,255,255,0.78);">
+        We let an industry the size of global aviation operate without a single ecological standard.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- THE DATA — 4 big numbers -->
+<section class="section bg-dark border-y-thin" data-testid="home-crisis-numbers" style="border-color:rgba(255,255,255,0.1);padding-top:24px;padding-bottom:0;">
+  <div class="container-x">
+    <div class="reveal" style="margin-bottom:48px;">
+      <p class="eyebrow" style="color:rgba(255,255,255,0.55);">The numbers nobody quotes</p>
+    </div>
+    <div class="crisis-stats">
+      <div class="reveal stat-block" data-testid="crisis-stat-1">
+        <p class="stat-v">2.4B</p>
+        <p class="stat-k">people cook with charcoal &amp; biomass every day</p>
+        <p class="stat-src">United Nations</p>
+      </div>
+      <div class="reveal stat-block" data-delay="0.06" data-testid="crisis-stat-2">
+        <p class="stat-v">~3M ha</p>
+        <p class="stat-k">of forest lost to charcoal production each year</p>
+        <p class="stat-src">FAO estimates</p>
+      </div>
+      <div class="reveal stat-block" data-delay="0.12" data-testid="crisis-stat-3">
+        <p class="stat-v">1 : 6</p>
+        <p class="stat-k">kilo of charcoal produced per six kilos of wood burned</p>
+        <p class="stat-src">Average industry yield</p>
+      </div>
+      <div class="reveal stat-block" data-delay="0.18" data-testid="crisis-stat-4">
+        <p class="stat-v">0</p>
+        <p class="stat-k">global standards for eco-friendly charcoal — until now</p>
+        <p class="stat-src">JavaHeat changes this</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ACT II — THE ANSWER
+     ============================================================ -->
+
+<!-- MISSION TRANSITION -->
+<section class="section" data-testid="home-mission" style="padding-top:160px;padding-bottom:160px;">
+  <div class="container-x">
+    <div class="grid-12" style="align-items:flex-start;">
+      <div class="reveal col-span-4">
+        <p class="eyebrow">Why JavaHeat exists</p>
+      </div>
+      <div class="reveal col-span-8" data-delay="0.05">
+        <h2 class="h1 text-balance">
+          So we built<br />
+          <em class="serif-em">the missing standard.</em>
+        </h2>
+        <p class="lead" style="margin-top:48px;max-width:640px;">
+          JavaHeat is the first charcoal house in the world to commit to a published ecological grade
+          on every batch — and to tie that grade to a reforestation pledge with every ton sold.
+          We don't sell more charcoal. We sell <em>better</em> charcoal, and we give back what we took.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECO-GRADING SYSTEM -->
+<section class="section bg-secondary" id="grading-system" data-testid="home-grading-system">
+  <div class="container-x">
+    <div class="grid-12" style="align-items:flex-end;margin-bottom:96px;">
+      <div class="reveal col-span-3">
+        <p class="eyebrow">The Foundation</p>
+      </div>
+      <div class="reveal col-span-9" data-delay="0.05">
+        <h2 class="h2 text-balance">
+          The Eco-Grading System.<br />
+          <em class="serif-em">Four checkpoints. One uncompromising standard.</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid-12" style="gap:80px;align-items:flex-start;">
+      <div class="reveal col-span-5 lg-sticky-top">
+        <p class="lead" style="max-width:460px;">
+          Charcoal has always been sold by trust alone — a fuel without a standard. JavaHeat changes that.
+          The <strong style="font-weight:500;">Eco-Grading System</strong> is the first formal framework that scores
+          charcoal across four eco-friendly criteria before a single piece is packaged.
+        </p>
+        <a class="btn btn-primary" href="#product" style="margin-top:40px;">
+          Then meet the product <span data-icon="arrowRight"></span>
+        </a>
+      </div>
+
+      <div class="col-span-7">
+        <ol class="bento" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);">
+          <li class="grade-row reveal" data-testid="home-grading-sustainability">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+              <span class="num">01</span>
+              <span class="ico" data-icon="tree"></span>
+            </div>
+            <div class="body">
+              <h3 class="h3" style="margin:0;">Sustainability score</h3>
+              <p>Traceability to a sustainably managed plantation or coconut-shell cooperative. Zero deforestation, audited at source.</p>
+            </div>
+          </li>
+          <li class="grade-row reveal" data-delay="0.05" data-testid="home-grading-density">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+              <span class="num">02</span>
+              <span class="ico" data-icon="scanLine"></span>
+            </div>
+            <div class="body">
+              <h3 class="h3" style="margin:0;">Density &amp; geometry</h3>
+              <p>Hand-sorted cubes measured against a master sample so every piece in the box behaves the same on the grill.</p>
+            </div>
+          </li>
+          <li class="grade-row reveal" data-delay="0.1" data-testid="home-grading-moisture">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+              <span class="num">03</span>
+              <span class="ico" data-icon="droplet"></span>
+            </div>
+            <div class="body">
+              <h3 class="h3" style="margin:0;">Moisture &amp; ash</h3>
+              <p>Low-oxygen pyrolysis and kiln drying lock moisture below 6% and ash below 3% — cleaner burn, less waste.</p>
+            </div>
+          </li>
+          <li class="grade-row reveal" data-delay="0.15" data-testid="home-grading-burn">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+              <span class="num">04</span>
+              <span class="ico" data-icon="flame"></span>
+            </div>
+            <div class="body">
+              <h3 class="h3" style="margin:0;">Burn-profile audit</h3>
+              <p>Calorific value, burn time and smoke profile tested per batch against the JavaHeat standard before export.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT — Plus Value -->
+<section class="section" id="product" data-testid="home-product-section">
+  <div class="container-x">
+    <div class="grid-12" style="gap:80px;align-items:flex-start;">
+      <div class="col-span-5 lg-sticky-top">
+        <div class="reveal">
+          <p class="eyebrow" style="margin-bottom:24px;">The Proof</p>
+          <h2 class="h2">
+            Plus Value.<br />
+            <em class="serif-em">Our finest grade.</em>
+          </h2>
+          <p class="lead" style="margin-top:32px;max-width:460px;color:var(--muted-foreground);">
+            What the standard produces at its highest expression. Hand-sorted by density and geometry,
+            then calibrated against the JavaHeat burn-profile audit before it ever leaves our facility in Java.
+          </p>
+          <div class="cta-stack" style="margin-top:40px;">
+            <a class="btn btn-primary-invert" data-testid="home-see-all-grades" href="products.html">
+              See all 3 grades <span data-icon="arrowRight"></span>
             </a>
           </div>
-
-          <div class="col-span-7">
-            <ol class="bento" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1px;">
-              <li class="grade-row reveal" data-testid="home-grading-sustainability">
-                <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-                  <span class="num">01</span>
-                  <span class="ico" data-icon="tree"></span>
-                </div>
-                <div class="body">
-                  <h3 class="h3" style="margin:0;">Sustainability score</h3>
-                  <p>Every batch is scored on traceability to a sustainably managed plantation or coconut-shell cooperative. Zero deforestation, audited at source.</p>
-                </div>
-              </li>
-              <li class="grade-row reveal" data-delay="0.05" data-testid="home-grading-density">
-                <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-                  <span class="num">02</span>
-                  <span class="ico" data-icon="scanLine"></span>
-                </div>
-                <div class="body">
-                  <h3 class="h3" style="margin:0;">Density &amp; geometry</h3>
-                  <p>Hand-sorted cubes are measured against a master sample so every piece in the box behaves the same on the grill.</p>
-                </div>
-              </li>
-              <li class="grade-row reveal" data-delay="0.1" data-testid="home-grading-moisture">
-                <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-                  <span class="num">03</span>
-                  <span class="ico" data-icon="droplet"></span>
-                </div>
-                <div class="body">
-                  <h3 class="h3" style="margin:0;">Moisture &amp; ash</h3>
-                  <p>Low-oxygen pyrolysis and kiln drying lock the moisture below 6% and ash below 3% — cleaner burn, less waste.</p>
-                </div>
-              </li>
-              <li class="grade-row reveal" data-delay="0.15" data-testid="home-grading-burn">
-                <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-                  <span class="num">04</span>
-                  <span class="ico" data-icon="flame"></span>
-                </div>
-                <div class="body">
-                  <h3 class="h3" style="margin:0;">Burn-profile audit</h3>
-                  <p>Calorific value, burn time and smoke profile are tested per batch against the JavaHeat standard before export.</p>
-                </div>
-              </li>
-            </ol>
-
-            <div class="reveal" data-delay="0.25" style="margin-top:40px;">
-              <div class="bento" style="grid-template-columns:repeat(3,1fr);">
-                <div class="stat-cell"><p class="v">4</p><p class="k">Eco criteria</p></div>
-                <div class="stat-cell"><p class="v">3</p><p class="k">Grades produced</p></div>
-                <div class="stat-cell"><p class="v">100%</p><p class="k">Traceable origin</p></div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
 
-    <!-- PRODUCT -->
-    <section class="section" id="product" data-testid="home-product-section">
-      <div class="container-x">
-        <div class="grid-12" style="gap:80px;align-items:flex-start;">
-          <div class="col-span-5 lg-sticky-top">
-            <div class="reveal">
-              <p class="eyebrow" style="margin-bottom:24px;">The Product</p>
-              <h2 class="h2">
-                Plus Value.<br />
-                <em class="serif-em">Our finest grade.</em>
-              </h2>
-              <p class="lead" style="margin-top:32px;max-width:460px;color:var(--muted-foreground);">
-                The first commercially graded eco-friendly charcoal in the world. Hand-sorted by density and geometry,
-                then calibrated against a rigorous burn-profile standard before it ever leaves our facility in Java.
-              </p>
-              <div class="cta-stack" style="margin-top:40px;">
-                <a class="btn btn-primary-invert" data-testid="home-see-all-grades" href="products.html">
-                  See all 3 grades <span data-icon="arrowRight"></span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-span-7">
-            <div class="reveal" data-delay="0.1">
-              <div class="aspect-4-5" data-testid="home-product-card">
-                <img src="https://static.prod-images.emergentagent.com/jobs/e04965c3-8ed4-4715-8caa-bc017e530dd1/images/1f32cace87bffba9134d6f8be5fb20d5f9b56096ce9999c0d926c016e08bc7a0.png" alt="JavaHeat Plus Value graded charcoal cubes" />
-                <div class="badge-row">
-                  <span style="font-family:var(--font-serif);font-size:24px;">Plus Value</span>
-                  <span class="badge-tag">Top Grade</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="reveal" data-delay="0.2" style="margin-top:40px;">
-              <div class="bento" style="grid-template-columns:repeat(2,1fr);">
-                <div class="spec-cell"><p class="k">Calorific value</p><p class="v">≥ 7,200 kcal/kg</p></div>
-                <div class="spec-cell"><p class="k">Fixed carbon</p><p class="v">≥ 80%</p></div>
-                <div class="spec-cell"><p class="k">Ash content</p><p class="v">≤ 3%</p></div>
-                <div class="spec-cell"><p class="k">Moisture</p><p class="v">≤ 6%</p></div>
-                <div class="spec-cell"><p class="k">Burn time</p><p class="v">3–4 hours</p></div>
-                <div class="spec-cell"><p class="k">Origin</p><p class="v">Java, Indonesia</p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BENEFITS -->
-    <section class="section bg-dark" data-testid="home-benefits-section">
-      <div class="container-x">
-        <div class="grid-12" style="margin-bottom:64px;">
-          <div class="reveal col-span-3">
-            <p class="eyebrow" style="color:rgba(255,255,255,0.6);">Why JavaHeat</p>
-          </div>
-          <div class="reveal col-span-9" data-delay="0.1">
-            <h2 class="h2 text-balance">
-              A different idea of what<br />
-              charcoal can be.
-            </h2>
-          </div>
-        </div>
-
-        <div class="grid-4" style="border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.1);gap:1px;">
-          <div class="reveal" data-testid="home-benefit-graded" style="background:#0a0a0a;padding:40px;">
-            <span style="display:inline-flex;width:28px;height:28px;margin-bottom:40px;opacity:0.85;color:#fff;" data-icon="scanLine"></span>
-            <h3 class="h3" style="margin-bottom:16px;">Graded, not guessed.</h3>
-            <p class="text-sm-soft">Every batch is sorted by density, geometry and moisture — the world's first charcoal with consistent, certified grades.</p>
-          </div>
-          <div class="reveal" data-delay="0.05" data-testid="home-benefit-eco" style="background:#0a0a0a;padding:40px;">
-            <span style="display:inline-flex;width:28px;height:28px;margin-bottom:40px;opacity:0.85;color:#fff;" data-icon="leaf"></span>
-            <h3 class="h3" style="margin-bottom:16px;">Truly eco-friendly.</h3>
-            <p class="text-sm-soft">Sourced from sustainably managed Indonesian hardwood and coconut shell residue. Zero deforestation, traceable to origin.</p>
-          </div>
-          <div class="reveal" data-delay="0.1" data-testid="home-benefit-burn" style="background:#0a0a0a;padding:40px;">
-            <span style="display:inline-flex;width:28px;height:28px;margin-bottom:40px;opacity:0.85;color:#fff;" data-icon="flame"></span>
-            <h3 class="h3" style="margin-bottom:16px;">Cleaner, longer burn.</h3>
-            <p class="text-sm-soft">Low ash. Low smoke. High calorific value. A burn profile engineered for restaurants, lounges and discerning grills.</p>
-          </div>
-          <div class="reveal" data-delay="0.15" data-testid="home-benefit-premium" style="background:#0a0a0a;padding:40px;">
-            <span style="display:inline-flex;width:28px;height:28px;margin-bottom:40px;opacity:0.85;color:#fff;" data-icon="award"></span>
-            <h3 class="h3" style="margin-bottom:16px;">Plus Value tier.</h3>
-            <p class="text-sm-soft">Our top grade — hand-finished, calibrated and packaged for the world's most demanding kitchens and connoisseurs.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GRADING PROCESS -->
-    <section class="section" data-testid="home-grading-process">
-      <div class="container-x">
-        <div class="grid-12" style="gap:80px;align-items:center;">
-          <div class="reveal col-span-6 order-2 lg-order-1">
-            <div class="aspect-4-5">
-              <img src="https://images.pexels.com/photos/33011264/pexels-photo-33011264.jpeg" alt="Glowing embers — JavaHeat burn profile" />
-            </div>
-          </div>
-          <div class="col-span-6 order-1 lg-order-2">
-            <div class="reveal">
-              <p class="eyebrow" style="margin-bottom:24px;">The Grading</p>
-              <h2 class="h2">
-                Four checkpoints.<br />
-                <em class="serif-em">One uncompromising standard.</em>
-              </h2>
-            </div>
-
-            <ol class="bento" style="list-style:none;padding:0;margin:48px 0 0;display:flex;flex-direction:column;gap:1px;">
-              <li class="grade-row reveal">
-                <span class="num" style="font-size:32px;">01</span>
-                <div class="body">
-                  <h4 style="font-family:var(--font-serif);font-size:22px;margin:0;letter-spacing:-0.01em;">Sustainable sourcing</h4>
-                  <p>Hardwood and coconut shell from traceable, replanted plantations across Java.</p>
-                </div>
-              </li>
-              <li class="grade-row reveal" data-delay="0.05">
-                <span class="num" style="font-size:32px;">02</span>
-                <div class="body">
-                  <h4 style="font-family:var(--font-serif);font-size:22px;margin:0;letter-spacing:-0.01em;">Slow pyrolysis</h4>
-                  <p>Low-oxygen carbonisation that locks in carbon and removes volatiles.</p>
-                </div>
-              </li>
-              <li class="grade-row reveal" data-delay="0.1">
-                <span class="num" style="font-size:32px;">03</span>
-                <div class="body">
-                  <h4 style="font-family:var(--font-serif);font-size:22px;margin:0;letter-spacing:-0.01em;">Hand grading</h4>
-                  <p>Each piece sorted by density, geometry and moisture against a master sample.</p>
-                </div>
-              </li>
-              <li class="grade-row reveal" data-delay="0.15">
-                <span class="num" style="font-size:32px;">04</span>
-                <div class="body">
-                  <h4 style="font-family:var(--font-serif);font-size:22px;margin:0;letter-spacing:-0.01em;">Burn-profile audit</h4>
-                  <p>Every batch tested for calorific value, ash and burn time before export.</p>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SUSTAINABILITY PULL QUOTE -->
-    <section class="bg-dark" data-testid="home-sustainability" style="position:relative;padding:128px 0;overflow:hidden;">
-      <div style="position:absolute;inset:0;opacity:0.4;background-size:cover;background-position:center;background-image:url('https://static.prod-images.emergentagent.com/jobs/e04965c3-8ed4-4715-8caa-bc017e530dd1/images/cfc5d7e4db65d98a5dd7d6e61c08a2d779dc0a0d2fe432b0db34b3fbd8154e2b.png');"></div>
-      <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4), rgba(0,0,0,0.8));"></div>
-      <div style="position:relative;max-width:1100px;margin:0 auto;padding:0 24px;text-align:center;">
-        <div class="reveal">
-          <p class="eyebrow" style="color:rgba(255,255,255,0.6);margin-bottom:32px;">On Sustainability</p>
-        </div>
+      <div class="col-span-7">
         <div class="reveal" data-delay="0.1">
-          <p style="font-family:var(--font-serif);font-weight:300;line-height:1.1;letter-spacing:-0.01em;font-size:clamp(1.75rem, 5vw, 4rem);text-wrap:balance;">
-            "Premium does not have to cost the forest.<br />
-            JavaHeat proves it — one graded ember at a time."
-          </p>
+          <div class="aspect-4-5" data-testid="home-product-card">
+            <img src="https://static.prod-images.emergentagent.com/jobs/e04965c3-8ed4-4715-8caa-bc017e530dd1/images/1f32cace87bffba9134d6f8be5fb20d5f9b56096ce9999c0d926c016e08bc7a0.png" alt="JavaHeat Plus Value graded charcoal cubes" />
+            <div class="badge-row">
+              <span style="font-family:var(--font-serif);font-size:24px;">Plus Value</span>
+              <span class="badge-tag">Top Grade</span>
+            </div>
+          </div>
         </div>
-        <div class="reveal" data-delay="0.2">
-          <p class="eyebrow" style="color:rgba(255,255,255,0.6);margin-top:40px;">— JavaHeat Production Manifesto</p>
+
+        <div class="reveal" data-delay="0.2" style="margin-top:40px;">
+          <div class="bento" style="grid-template-columns:repeat(2,1fr);background:var(--border);border:1px solid var(--border);gap:1px;">
+            <div class="spec-cell"><p class="k">Calorific value</p><p class="v">≥ 7,200 kcal/kg</p></div>
+            <div class="spec-cell"><p class="k">Fixed carbon</p><p class="v">≥ 80%</p></div>
+            <div class="spec-cell"><p class="k">Ash content</p><p class="v">≤ 3%</p></div>
+            <div class="spec-cell"><p class="k">Moisture</p><p class="v">≤ 6%</p></div>
+            <div class="spec-cell"><p class="k">Burn time</p><p class="v">3–4 hours</p></div>
+            <div class="spec-cell"><p class="k">Origin</p><p class="v">Java, Indonesia</p></div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ACT III — THE PROMISE
+     ============================================================ -->
+
+<!-- REFORESTATION — closing the loop -->
+<section class="reforest-hero" data-testid="home-reforestation" style="position:relative;overflow:hidden;">
+  <div class="reforest-bg" aria-hidden="true" style="background-image:url('https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg');"></div>
+  <div class="reforest-veil" aria-hidden="true"></div>
+  <div class="container-x" style="position:relative;z-index:1;padding-top:140px;padding-bottom:160px;">
+    <div class="grid-12" style="align-items:flex-end;margin-bottom:80px;">
+      <div class="reveal col-span-4">
+        <p class="eyebrow" style="color:rgba(255,255,255,0.6);">Closing the loop</p>
+      </div>
+      <div class="reveal col-span-8" data-delay="0.05">
+        <h2 class="h-display text-balance" style="font-size:clamp(2.5rem, 7vw, 6.5rem);">
+          For every ton sold,<br />
+          <em class="serif-em" style="color:#fff;opacity:0.9;">a forest grows back.</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid-12" style="gap:64px;align-items:flex-start;">
+      <div class="reveal col-span-5" data-delay="0.1">
+        <p class="lead" style="color:rgba(255,255,255,0.85);max-width:460px;">
+          Every JavaHeat invoice triggers a reforestation contribution to our partner cooperatives in
+          Central Java and Sulawesi. Indigenous hardwood saplings — teak, sengon, mahogany — replanted
+          on degraded land within 30 days of shipment.
+        </p>
+        <p class="lead" style="color:rgba(255,255,255,0.85);max-width:460px;margin-top:24px;">
+          We don't just take less. We give back more.
+        </p>
+      </div>
+
+      <div class="col-span-7">
+        <div class="reforest-stats reveal" data-delay="0.15">
+          <div class="r-stat" data-testid="reforest-stat-trees">
+            <p class="r-v">10×</p>
+            <p class="r-k">trees replanted for every ton of charcoal we ship</p>
+          </div>
+          <div class="r-stat" data-testid="reforest-stat-ha">
+            <p class="r-v">180+ ha</p>
+            <p class="r-k">degraded land already restored with partner cooperatives</p>
+          </div>
+          <div class="r-stat" data-testid="reforest-stat-comm">
+            <p class="r-v">7</p>
+            <p class="r-k">village cooperatives sustained by JavaHeat sourcing</p>
+          </div>
+          <div class="r-stat" data-testid="reforest-stat-zero">
+            <p class="r-v">0</p>
+            <p class="r-k">primary forest cleared — ever, in any grade</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" data-delay="0.25" style="margin-top:80px;border-top:1px solid rgba(255,255,255,0.15);padding-top:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;">
+      <p class="text-sm-soft" style="margin:0;max-width:560px;color:rgba(255,255,255,0.65);">
+        Every ton certified, every sapling logged, every cooperative named on request.
+        Traceability is part of the grade — it has to be.
+      </p>
+      <a class="btn btn-light" href="about.html" data-testid="reforest-cta">
+        Read our manifesto <span data-icon="arrowRight"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- THE THREE GRADES — quick visual nav -->
+<section class="section" data-testid="home-grade-nav">
+  <div class="container-x">
+    <div class="grid-12" style="align-items:flex-end;margin-bottom:64px;">
+      <div class="reveal col-span-4">
+        <p class="eyebrow">The full range</p>
+      </div>
+      <div class="reveal col-span-8" data-delay="0.05">
+        <h2 class="h2 text-balance">
+          Three grades.<br />
+          <em class="serif-em">One ecological promise.</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="grade-nav">
+      <a class="gn-card reveal" href="products.html#products-grade-plus-value" data-testid="gn-plus-value">
+        <div class="gn-img" style="background-image:url('https://static.prod-images.emergentagent.com/jobs/e04965c3-8ed4-4715-8caa-bc017e530dd1/images/1f32cace87bffba9134d6f8be5fb20d5f9b56096ce9999c0d926c016e08bc7a0.png');"></div>
+        <div class="gn-body">
+          <p class="gn-eyebrow">Grade A · Top</p>
+          <h3 class="gn-title">Plus Value</h3>
+          <p class="gn-desc">Fine dining, lounges, connoisseur kitchens.</p>
+          <span class="gn-link">Explore <span data-icon="arrowRight"></span></span>
+        </div>
+      </a>
+      <a class="gn-card reveal" data-delay="0.08" href="products.html#products-grade-premium" data-testid="gn-premium">
+        <div class="gn-img" style="background-image:url('https://images.pexels.com/photos/33011264/pexels-photo-33011264.jpeg');"></div>
+        <div class="gn-body">
+          <p class="gn-eyebrow">Grade B · Pro</p>
+          <h3 class="gn-title">Premium</h3>
+          <p class="gn-desc">Restaurants, steakhouses, hospitality wholesale.</p>
+          <span class="gn-link">Explore <span data-icon="arrowRight"></span></span>
+        </div>
+      </a>
+      <a class="gn-card reveal" data-delay="0.16" href="products.html#products-grade-eco-standard" data-testid="gn-eco">
+        <div class="gn-img" style="background-image:url('https://static.prod-images.emergentagent.com/jobs/e04965c3-8ed4-4715-8caa-bc017e530dd1/images/4546a48b51d14310efd4ea3388d1ee9be875a288c14757674ac787778ae32539.png');"></div>
+        <div class="gn-body">
+          <p class="gn-eyebrow">Grade C · Retail</p>
+          <h3 class="gn-title">Eco Standard</h3>
+          <p class="gn-desc">Retail, conscious consumers, the everyday grill.</p>
+          <span class="gn-link">Explore <span data-icon="arrowRight"></span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 
     <!-- GET STARTED -->
     <section class="section bg-dark" data-testid="home-get-started" style="position:relative;overflow:hidden;">
